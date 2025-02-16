@@ -1,0 +1,15 @@
+.crown-icon {
+    width: 80px;
+    height: 80px;
+    margin-top: 25px;
+    margin-left: 50px;
+    margin-right: 25px;
+  }
+  
+  .crown-icon.hidden {
+    visibility: hidden;
+  }
+  
+  .crown-icon.visible {
+    visibility: visible;
+  }
