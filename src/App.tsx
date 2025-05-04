@@ -159,7 +159,7 @@ export default function App() {
   return (
     <Fragment>
       <View style={styles.container}>
-        <Text style={styles.title}>Hindsight's 2020</Text>
+        <Text style={styles.title}>Hindsight Is 2020</Text>
         <View style={{ ...styles.scoreCard, width: isGameOver ? 240 : 120 }}>
           {isGameOver && <Crown visible={isGameOver} />}
           <Text style={styles.scoreText}>{moveCount}</Text>
@@ -205,11 +205,13 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
+    width: '90%',
     backgroundColor: '#606060',
     alignItems: 'center',
   },
   gridContainer: {
     flex: 1,
+    width:'80%',
     backgroundColor: '#606060',
     alignItems: 'center',
     justifyContent: 'center',
