@@ -4,10 +4,10 @@ import { ActionResponse, Grid, GridConfig, GridProps } from './v4/Grid';
 import { ColorPalette } from './v4/ColorPalette';
 import { Fragment, useState } from 'react';
 import * as Haptics from 'expo-haptics';
-import { CellType, PathCellType, VoidCellType } from './v4/Cell';
-import { Direction } from './v4/WallData';
+import { CellType, VoidCellType } from './v4/Cell';
 import Crown from './v4/Crown';
 import RestartIcon from './v4/RestartIcon';
+import { DefaultConfigMapper } from './v5/MazeConfigs';
 
 type LimitedDirection = 'S' | 'D' | 'E';
 
@@ -61,8 +61,7 @@ const iteratePath = (columnCount: number, rowCount: number, currentPath: Array<n
 
 let columnCount: number = 5;
 let rowCount: number = 5;
-let startIndex: number = 1 + Math.floor(Math.random() * (columnCount - 1));
-let pathIndices = iteratePath(columnCount, rowCount, [startIndex], ['S', 'D', 'E']);
+let pathIndices = DefaultConfigMapper.getNextPath();
 
 export default function App() {
   let [userPath, setUserPath] = useState<Array<number>>([]);
@@ -140,8 +139,7 @@ export default function App() {
     setUserPath(_ => []);
     setMoveCount(_ => 0);
     setIsGameOver(_ => false);
-    startIndex = 1 + Math.floor(Math.random() * (columnCount - 1));
-    pathIndices = iteratePath(columnCount, rowCount, [startIndex], ['S', 'D', 'E']);
+    pathIndices = DefaultConfigMapper.getNextPath();
     gridConfig = {
       columnCount,
       rowCount,
