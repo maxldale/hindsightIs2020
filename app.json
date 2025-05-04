@@ -22,7 +22,7 @@
     },
     "web": {
       "favicon": "./assets/favicon.png",
-      "bundler": "webpack"
+      "assetPrefix": "https://hindsightis2020.maxldale.com"
     }
   }
 }
